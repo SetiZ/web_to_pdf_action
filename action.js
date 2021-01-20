@@ -15,6 +15,7 @@ const puppeteer = require('puppeteer');
                 'displayHeaderFooter': false,
                 'path': outputFile
             };
+            console.log(core.getInput('pdfOptions'))
             const pdfOpts = Object.assign({}, core.getInput('pdfOptions'), pdfDefaults);
             const pptrOpts = {
                 executablePath: googlePath,
@@ -26,11 +27,9 @@ const puppeteer = require('puppeteer');
             await daPage.goto(webPageURL, {
                 waitUntil: "networkidle0",
             })
-            console.log(useScreen)
             if (useScreen) {
                 await daPage.emulateMediaType('screen');
             }
-            console.log(pdfOpts)
             await daPage.pdf(pdfOpts)
             await browser.close()
 
