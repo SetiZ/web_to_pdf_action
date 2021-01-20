@@ -23,6 +23,11 @@ inputs:
       work as expected.
     required: false
     default: "false"
+  useScreen:
+    description: |
+      option to emulate mediaType screen
+    required: false
+    default: "false"
 runs:
   # using: 'node12'
   # main: 'dist/index.js'
