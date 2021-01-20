@@ -26,9 +26,11 @@ const puppeteer = require('puppeteer');
             await daPage.goto(webPageURL, {
                 waitUntil: "networkidle0",
             })
+            console.log(useScreen)
             if (useScreen) {
                 await daPage.emulateMediaType('screen');
             }
+            console.log(pdfOpts)
             await daPage.pdf(pdfOpts)
             await browser.close()
 
