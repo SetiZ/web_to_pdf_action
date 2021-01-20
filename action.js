@@ -15,7 +15,7 @@ const puppeteer = require('puppeteer');
                 'displayHeaderFooter': false,
                 'path': outputFile
             };
-            console.log(core.getInput('pdfOptions'))
+            console.log("pdfOptions", core.getInput('pdfOptions'))
             const pdfOpts = Object.assign({}, core.getInput('pdfOptions'), pdfDefaults);
             const pptrOpts = {
                 executablePath: googlePath,
