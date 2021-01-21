@@ -21529,6 +21529,7 @@ const puppeteer = __webpack_require__(885);
                 'displayHeaderFooter': false,
                 'path': outputFile
             };
+            console.log("pdfOptions", JSON.parse(core.getInput('pdfOptions')))
             const pdfOpts = Object.assign({}, core.getInput('pdfOptions'), pdfDefaults);
             const pptrOpts = {
                 executablePath: googlePath,
@@ -21540,11 +21541,9 @@ const puppeteer = __webpack_require__(885);
             await daPage.goto(webPageURL, {
                 waitUntil: "networkidle0",
             })
-            console.log(useScreen)
             if (useScreen) {
                 await daPage.emulateMediaType('screen');
             }
-            console.log(pdfOpts)
             await daPage.pdf(pdfOpts)
             await browser.close()
 
