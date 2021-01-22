@@ -28,6 +28,8 @@ const puppeteer = require('puppeteer');
             })
             if (useScreen) {
                 await daPage.emulateMediaType('screen');
+            } else {
+                await daPage.emulateMediaType('print');
             }
             await daPage.pdf(pdfOpts)
             await browser.close()
