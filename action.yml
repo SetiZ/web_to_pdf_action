@@ -22,12 +22,12 @@ inputs:
       This would allow more control over the output, but for the moment it doesn't
       work as expected.
     required: false
-    default: "false"
+    default: false
   useScreen:
     description: |
       option to emulate mediaType screen
     required: false
-    default: "false"
+    default: false
 runs:
   # using: 'node12'
   # main: 'dist/index.js'
