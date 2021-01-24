@@ -21576,6 +21576,7 @@ const puppeteer = __webpack_require__(885);
         const usePuppeteer = core.getInput('usePuppeteer');
         const useScreen = core.getInput('useScreen');
         console.log(`Starting PDF generation for ${webPageURL}`);
+        console.log(usePuppeteer, useScreen);
         if (usePuppeteer) {
             const pdfDefaults = {
                 'displayHeaderFooter': false,
@@ -21594,8 +21595,6 @@ const puppeteer = __webpack_require__(885);
             })
             if (useScreen) {
                 await daPage.emulateMediaType('screen');
-            } else {
-                await daPage.emulateMediaType('print');
             }
             await daPage.pdf(pdfOpts)
             await browser.close()
